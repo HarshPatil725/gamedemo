@@ -55,17 +55,11 @@
 
 .game-grid {
     display: grid;
-    /* exactly 3 equal columns */
     grid-template-columns: repeat(3, 1fr);
-    /* :contentReference[oaicite:0]{index=0} */
-    /* exactly 2 rows that size to content height */
     grid-template-rows: repeat(2, auto);
-    /* :contentReference[oaicite:1]{index=1} */
     gap: 1.5rem;
-    /* if more than 6 items, you can scroll: */
     overflow-y: auto;
     max-height: calc(2 * (120px + 2rem));
-    /* approximate two rows height */
 }
 
 

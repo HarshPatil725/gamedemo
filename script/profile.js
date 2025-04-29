@@ -1,4 +1,3 @@
-// profileButton.js
 function updateNavButton() {
   const user = localStorage.getItem('currentUser');
   const navBtn = document.getElementById('signInBtn');

@@ -20,7 +20,7 @@
             <a href="../index.html#hero">Home</a>
             <a href="../index.html#games">Games</a>
             <a href="">Favourites</a>
-            <a href="">About us</a>
+            <a href="../index.html#aboutUS">About us</a>
             </div>
 
             <!-- Sign in button -->
@@ -30,26 +30,36 @@
     </header>
 
     <main>
+
         <div class="formWrapper">
+
             <div class="formCard">
+
                 <h1 id="formTitle">Sign In</h1>
                 <div class="toggleBtns">
                     <button id="btnSignIn" class="active">Sign In</button>
                     <button id="btnSignUp">Sign Up</button>
                 </div>
+
+                <!-- Sign in form -->
                 <form id="formSignIn" class="activeForm">
                     <input type="email" id="signInEmail" placeholder="Email address" required />
                     <input type="password" id="signInpass" placeholder="Password" required />
                     <button type="submit" class="btn">Sign In</button>
                 </form>
+
+                <!-- Sign up form -->
                 <form id="formSignUp">
                     <input type="text" id="signUpUser" placeholder="Username" required />
                     <input type="email" id="signUpEmail" placeholder="Email address" required />
                     <input type="password" id="signUppass" placeholder="Create password" required />
                     <button type="submit" class="btn">Sign Up</button>
                 </form>
+
             </div>
+
         </div>
+
     </main>
 
     <script src="../script/auth.js"></script>

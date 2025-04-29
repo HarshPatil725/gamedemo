@@ -12,11 +12,11 @@ body {
     font-family: "Open Sans", serif;
     background-image:
         url('assets/line_vector.png'),
-        linear-gradient(113deg, #292734 1.59%, #000 107.47%);
-
+        linear-gradient(113deg, #292734 1.59%, #000 107.47%); 
+        /* Dono chije lgayi hai */
     background-repeat: no-repeat;
-    /* 👇 Separate size for image and gradient */
-    background-size: 1500px auto, cover;
+    background-size: 1500px auto, cover; 
+    /* Line vector ki size define krdi hai */
     background-position: center, center;
 }
 
@@ -47,7 +47,6 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* align-content: center; */
 }
 
 /* Navigation Styling */
@@ -63,7 +62,8 @@ header {
     height: 12vh;
     background: linear-gradient(135deg, #1b1b35 0%, #101078 50%, #000000 100%);
     backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);          
+    /* Blur ke liye use kro */
     border-radius: 0px 0px 30px 30px;
     z-index: 1;
 }
@@ -96,6 +96,11 @@ nav li {
     100% {
         color: #ffffff;
     }
+}   
+
+.logo {
+    margin-left: 20px;
+    width: 180px;
 }
 
 #navs a {
@@ -105,6 +110,7 @@ nav li {
     color: white;
 }
 
+/* Underline of navs a tag code */
 #navs a::after {
     content: '';
     position: absolute;
@@ -119,11 +125,6 @@ nav li {
 
 #navs a:hover::after {
     width: 100%;
-}
-
-.logo {
-    margin-left: 20px;
-    width: 180px;
 }
 
 #signInBtn {
@@ -206,7 +207,6 @@ main {
     overflow: hidden;
     pointer-events: none;
     z-index: -1;
-    /* behind content */
 }
 
 .orb {
@@ -285,15 +285,11 @@ main {
     width: 210px;
     padding: 10px 12px;
     border: 2px solid;
-    /* Green gaming feel */
     border-radius: 8px;
     background-color: #1b1b1b;
-    /* Dark background */
     color: #fff;
-    /* White text */
     font-size: 16px;
     appearance: none;
-    /* Remove default arrow */
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10"><path fill="white" d="M7 10L0 0h14z"/></svg>');
@@ -318,7 +314,6 @@ main {
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-auto-rows: auto; */
     gap: 2vw;
     margin: 3vh 0;
 }
@@ -340,11 +335,7 @@ main {
 .game-card img {
     width: 24vw;
     height: 30vh;
-    /* fill the full card height */
-    /* :contentReference[oaicite:1]{index=1} */
     object-fit: cover;
-    /* preserve aspect ratio, crop to fit container */
-    /* :contentReference[oaicite:2]{index=2} */
     display: block;
     border-radius: 10px;
 }
@@ -428,14 +419,12 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Team grid: responsive CSS Grid */
+/* Team */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
-
-/* :contentReference[oaicite:2]{index=2} */
 
 /* Individual team card */
 .team-card {

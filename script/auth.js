@@ -1,24 +1,22 @@
-// DOM elements  
 const btnSignIn = document.getElementById('btnSignIn');
 const btnSignUp = document.getElementById('btnSignUp');
 const formSignIn = document.getElementById('formSignIn');
 const formSignUp = document.getElementById('formSignUp');
 const title = document.getElementById('form-title');
 
-// Load existing users or initialize empty  
-let users = JSON.parse(localStorage.getItem('users')) || [];  // :contentReference[oaicite:2]{index=2}
+// To store in users array of localstorage
+let users = JSON.parse(localStorage.getItem('users')) || [];  
 
-// Helper: save users back to localStorage  
 function saveUsers() {  
-  localStorage.setItem('users', JSON.stringify(users));       // :contentReference[oaicite:3]{index=3}  
+  localStorage.setItem('users', JSON.stringify(users));   
 }
 
-// Helper: set current user  
+// Kon hai current mai
 function setCurrentUser(username) {  
-  localStorage.setItem('currentUser', username);             // :contentReference[oaicite:4]{index=4}  
+  localStorage.setItem('currentUser', username);          
 }
 
-// SIGN UP handler  
+// Sign up function code
 formSignUp.addEventListener('submit', e => {  
   e.preventDefault();  
 
@@ -26,7 +24,6 @@ formSignUp.addEventListener('submit', e => {
   const email    = document.getElementById('signUpEmail').value.trim();  
   const password = document.getElementById('signUppass').value;  
 
-  // Basic uniqueness check  
   if (users.find(u => u.username === username)) {  
     alert('Username already taken');  
     return;  
@@ -35,10 +32,10 @@ formSignUp.addEventListener('submit', e => {
   // Add new user  
   users.push({ username, email, password });  
   saveUsers();  
-  window.location.reload();  // reload so profile button appears  
+  window.location.reload(); 
 });  
 
-// SIGN IN handler  
+// Sign in function code 
 formSignIn.addEventListener('submit', e => {  
   e.preventDefault();  
 
@@ -50,12 +47,12 @@ formSignIn.addEventListener('submit', e => {
     alert('Invalid credentials');  
     return;  
   }  
-  alert("Harsh logged in") ;
+  alert(`${user.username} logged in`) ;
   setCurrentUser(user.username);
   window.location.href = "../index.html";    
 });  
 
-// Toggle forms  
+// Toggle between forms  
 btnSignIn.addEventListener('click', () => {  
   formSignIn.classList.add('activeForm');  
   formSignUp.classList.remove('activeForm');  

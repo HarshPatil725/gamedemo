@@ -1,27 +1,28 @@
-// Fetch game data from your JSON file
 fetch('data/data.json')
   .then(res => res.json())
   .then(games => {
     let currentPage = 1;
     const perPage = 6;
-    let filteredGames = [...games]; // Make a copy to filter dynamically
+    let filteredGames = [...games]; 
 
     const grid = document.getElementById('gameGrid');
     const pageNum = document.getElementById('pageNumber');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const gameCategories = document.getElementById('gameCategories'); // Assuming you have a <select> with this id
+    const gameCategories = document.getElementById('gameCategories'); 
 
+    // Total pages function
     function getTotalPages() {
       return Math.ceil(filteredGames.length / perPage);
     }
 
+    // Indexing as per me
     function renderPage(page) {
       if (page < 1) page = 1;
       if (page > getTotalPages()) page = getTotalPages();
       currentPage = page;
 
-      // slice data
+
       const start = (page - 1) * perPage;
       const pageItems = filteredGames.slice(start, start + perPage);
 
@@ -57,7 +58,6 @@ fetch('data/data.json')
       renderPage(currentPage);
     }
 
-    // Event Listeners
     prevBtn.addEventListener('click', () => renderPage(currentPage - 1));
     nextBtn.addEventListener('click', () => renderPage(currentPage + 1));
     gameCategories.addEventListener('change', applyFilter);
